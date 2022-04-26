@@ -10,7 +10,7 @@ Projeto desenvolvido durante o ignite da @Rocketseat.
     - [X] Nome do cliente
     - [X] ID que deverá ser um universal unique identifier
     - [X] Statement que deverá receber os dados de debito da conta
-- [ ] Deve ser possível buscar o extrato bancário do cliente
+- [X] Deve ser possível buscar o extrato bancário do cliente
 - [ ] Deve ser possível realizar um depósito 
 - [ ] Deve ser possível realizar um saque
 - [ ] Deve ser possível buscar o extrato bancário do cliente por data
