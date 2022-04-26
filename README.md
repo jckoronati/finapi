@@ -19,8 +19,7 @@ Projeto desenvolvido durante o ignite da @Rocketseat.
 
 ## Regras de negócio
 
-- [ ] Não deve ser possível cadastrar uma conta com CPF já existente
-- [ ] Não deve ser possível fazer depósito em uma conta não existente
+- [X] Não deve ser possível fazer depósito em uma conta não existente
 - [ ] Não deve ser possível buscar extrato em uma conta não existente
 - [ ] Não deve ser possível fazer saque em uma conta não existente
 - [ ] Não deve ser possível excluir uma conta não existente
