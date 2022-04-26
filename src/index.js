@@ -7,8 +7,6 @@ app.use(express.json());
 const customers = [];
 
 app.post('/account', (request, response) => {
-    console.log(request.body);
-
     const { cpf, name } = request.body;
     const uuid = v4();
 
