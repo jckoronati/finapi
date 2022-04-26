@@ -8,16 +8,22 @@ const customers = [];
 
 app.post('/account', (request, response) => {
     const { cpf, name } = request.body;
-    const uuid = v4();
+
+    const customerAlreadyExists = customers.some((customer) => customer.cpf === cpf);
+
+    if (customerAlreadyExists)
+        return response.status(400).send(`O CPF ${cpf} já está sendo utilizado`);
 
     customers.push({
         cpf,
         name,
-        uuid,
+        uuid: v4(),
         statament: []
     });
 
-    return response.status(201).send(`O cliente ${cpf} foi cadastrado com sucesso`);
+    console.log(customers);
+
+    return response.status(201).send(`O cliente com o ${cpf} foi cadastrado com sucesso`);
 });
 
 app.listen(3333);
