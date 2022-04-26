@@ -21,8 +21,6 @@ app.post('/account', (request, response) => {
         statament: []
     });
 
-    console.log(customers);
-
     return response.status(201).send(`O cliente com o ${cpf} foi cadastrado com sucesso`);
 });
 
