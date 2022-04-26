@@ -4,7 +4,12 @@ Projeto desenvolvido durante o ignite da @Rocketseat.
 
 ## Requisitos
 
-- [] Deve ser possível criar uma conta
+- [X] Deve ser possível criar uma conta
+    *A conta deve possuir os seguintes dados*:
+    - [X] CPF que deverá ser unico
+    - [X] Nome do cliente
+    - [X] ID que deverá ser um universal unique identifier
+    - [X] Statement que deverá receber os dados de debito da conta
 - [] Deve ser possível buscar o extrato bancário do cliente
 - [] Deve ser possível realizar um depósito 
 - [] Deve ser possível realizar um saque
