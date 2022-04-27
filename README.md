@@ -17,6 +17,7 @@ Projeto desenvolvido durante o ignite da @Rocketseat.
 - [X] Deve ser possível atualizar dados da conta do cliente
 - [X] Deve ser possível obter dados de uma conta
 - [X] Deve ser possível deletar uma conta
+- [ ] Deve ser possível retornar o balanço da conta
 
 ## Regras de negócio
 
