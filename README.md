@@ -17,7 +17,7 @@ Projeto desenvolvido durante o ignite da @Rocketseat.
 - [X] Deve ser possível atualizar dados da conta do cliente
 - [X] Deve ser possível obter dados de uma conta
 - [X] Deve ser possível deletar uma conta
-- [ ] Deve ser possível retornar o balanço da conta
+- [X] Deve ser possível retornar o balanço da conta
 
 ## Regras de negócio
 
@@ -27,4 +27,4 @@ Projeto desenvolvido durante o ignite da @Rocketseat.
 - [X] Não deve ser possível fazer saque em uma conta não existente
 - [X] Não deve ser possível fazer saque quando o saldo for insuficiente
 - [X] Não deve ser possível excluir uma conta não existente
-- [ ] Não deve ser possível retornar o balanço de uma conta não existente
+- [X] Não deve ser possível retornar o balanço de uma conta não existente
