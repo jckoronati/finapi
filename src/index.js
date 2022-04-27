@@ -19,8 +19,8 @@ function verifyIfExistsAccountCPF(request, response, next) {
     return next();
 }
 
-function getBalance(statament) {
-    const balance = statament.reduce((acc, operation) => {
+function getBalance(statement) {
+    const balance = statement.reduce((acc, operation) => {
         if (operation.type === 'credit')
             return acc + operation.amount;
         else
@@ -42,7 +42,7 @@ app.post('/account', (request, response) => {
         cpf,
         name,
         uuid: v4(),
-        statament: []
+        statement: []
     });
 
     return response.status(201).send(`O cliente com o ${cpf} foi cadastrado com sucesso`);
@@ -50,7 +50,7 @@ app.post('/account', (request, response) => {
 
 app.get('/statement', verifyIfExistsAccountCPF, (request, response) => {
     const { customer } = request;
-    return response.json(customer.statament);
+    return response.json(customer.statement);
 });
 
 app.post('/deposit', verifyIfExistsAccountCPF, (request, response) => {
@@ -58,14 +58,14 @@ app.post('/deposit', verifyIfExistsAccountCPF, (request, response) => {
 
     const { customer } = request;
 
-    const statamentOperation = {
+    const statementOperation = {
         description,
         amount,
         created_at: new Date(),
         type: "credit"
     };
 
-    customer.statament.push(statamentOperation);
+    customer.statement.push(statementOperation);
 
     return response.status(201).send();
 });
@@ -74,7 +74,7 @@ app.post('/withdraw', verifyIfExistsAccountCPF, (request, response) => {
     const { amount } = request.body;
     const { customer } = request;
 
-    const balance = getBalance(customer.statament);
+    const balance = getBalance(customer.statement);
 
     if (balance < amount)
         return response.status(400).send({ error: "Insufficient funds!" });
@@ -85,9 +85,21 @@ app.post('/withdraw', verifyIfExistsAccountCPF, (request, response) => {
         type: 'debit'
     };
 
-    customer.statament.push(statementOperation);
+    customer.statement.push(statementOperation);
 
     return response.status(201).send();
+});
+
+app.get('/statement/date', verifyIfExistsAccountCPF, (request, response) => {
+    const { customer } = request;
+    const { date } = request.query;
+
+    const dateFormat = new Date(date + " 00:00");
+    const statements = customer.statement.filter((statement) => {
+        return statement.created_at.toDateString() === new Date(dateFormat).toDateString();
+    });
+
+    return response.json(statements);
 });
 
 app.listen(3333);
