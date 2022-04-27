@@ -14,7 +14,8 @@ Projeto desenvolvido durante o ignite da @Rocketseat.
 - [X] Deve ser possível realizar um depósito 
 - [X] Deve ser possível realizar um saque
 - [X] Deve ser possível buscar o extrato bancário do cliente por data
-- [ ] Deve ser possível atualizar dados da conta do cliente
+- [X] Deve ser possível atualizar dados da conta do cliente
+- [X] Deve ser possível obter dados de uma conta
 - [ ] Deve ser possível deletar uma conta
 
 ## Regras de negócio
